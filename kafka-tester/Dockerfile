@@ -18,9 +18,9 @@ FROM alpine:latest
 RUN mkdir /kafka-tmp
 WORKDIR /kafka-tmp
 
-RUN apk -U add bash curl openjdk11 && \
+RUN apk -U add bash curl openjdk16 && \
     java -version && \
-    curl -0 http://apache.mirrors.hoobly.com/kafka/2.5.0/kafka_2.12-2.5.0.tgz --output kafka.tgz && \
+    curl -0 http://apache.mirrors.hoobly.com/kafka/3.3.1/kafka_2.12-3.3.1.tgz --output kafka.tgz && \
     tar -xvf kafka.tgz && \
     rm -fr kafka.tgz && \
     mv kafka* /kafka
